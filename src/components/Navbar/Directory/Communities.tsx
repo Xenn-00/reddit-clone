@@ -11,11 +11,12 @@ const Communities: React.FC<CommunitiesProps> = () => {
     <>
       <CreateCommunityModal open={open} handleClose={() => setOpen(false)} />
       <MenuItem
-        width={"100%"}
+        width={"100%"} 
         fontSize={"10pt"}
         _hover={{ bg: "gray.100" }}
         onClick={() => setOpen(true)}
       >
+        
         <Flex align={"center"}>
           <Icon as={GrAdd} fontSize={12} mr={2} />
           Create Community
