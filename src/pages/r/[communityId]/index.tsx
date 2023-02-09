@@ -7,6 +7,8 @@ import React from "react";
 import NotFound from "@/components/Community/NotFound";
 import Header from "@/components/Community/Header";
 import PageContent from "@/components/Layout/PageContent";
+import CreatePostLink from "@/components/Community/CreatePostLink";
+import Posts from "@/components/Posts/Posts";
 
 type CommunityPageProps = {
   communityData: Community;
@@ -21,15 +23,17 @@ const CommunityPage: React.FC<CommunityPageProps> = ({ communityData }) => {
       <Header communityData={communityData} />
       <PageContent>
         <>
-          <div></div>
+          <CreatePostLink />
+          <Posts communityData={communityData} />
         </>
         <>
-          <div></div>
+          <div>right side</div>
         </>
       </PageContent>
     </>
   );
 };
+export default CommunityPage;
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   // get community data and pass it to client
@@ -55,5 +59,3 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     console.log("getServerSideProps error", error);
   }
 }
-
-export default CommunityPage;

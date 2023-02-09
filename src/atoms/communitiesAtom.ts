@@ -9,3 +9,23 @@ export interface Community {
   createdAt?: Timestamp;
   imageURL?: string;
 }
+
+export interface CommunitySnippet {
+  communityId: string;
+  isModerator?: boolean;
+  imageURL?: string;
+}
+
+interface CommunityState {
+  Snippets: CommunitySnippet[];
+  // visitedCommunities
+}
+
+const defaultCommunityState: CommunityState = {
+  Snippets: [],
+};
+
+export const communityState = atom<CommunityState>({
+  key: "communitiesState",
+  default: defaultCommunityState,
+});
