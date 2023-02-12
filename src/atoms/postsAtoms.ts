@@ -18,7 +18,6 @@ export type Post = {
 interface PostState {
   selectedPost: Post | null;
   posts: Post[];
-  // postVotes
 }
 
 const defaultPostState: PostState = {
